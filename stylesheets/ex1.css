@@ -1,0 +1,35 @@
+body{
+    background: #000; 
+}
+.white{     
+    color:#fff; 
+}
+#main{     
+    width: 680px;     
+    background: #fff;     
+    margin: 0 auto; 
+}
+header{ 
+    background: url("../images/tokyo.jpg");     
+    border: solid #fff 3px;     
+    padding: 5px 0px 10px 0px;  
+}
+
+#menu{
+    width: 674px;
+    background: linear-gradient(#333 #000);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+#menu ul{
+    list-style: none;
+}
+#menu ul li{
+    color: #fff;
+    text-decoration: none;
+    padding-top: 5px;
+    height: 30px;
+    width: 90px;
+    float: left;
+    display: block;
+}
