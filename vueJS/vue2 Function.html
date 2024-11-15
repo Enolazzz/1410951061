@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VueJS 1</title>
+    <title>VueJS 2</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script> vue 2-->
 </head>
 <body>
-    <div id="app">{{ message }}</div>
-
+  <div id="app">{{ message }}
+    <button @click="clickHandler">
+      Count is: {{ count }}
+    </button>
+  </div>
 </body>
 <script>
     const { createApp, ref } = Vue
   
     createApp({
       setup() {
-        const message1 = ref('No message')
+        const message = ref('KKK')
         return {
-          message1
+          count: ref(0), message
+        }
+      },
+      methods:{
+        clickHandler(){
+          this.count++; this.message='MD:'+this.count;
         }
       }
     }).mount('#app')
+
+     
   </script>
 </html>
