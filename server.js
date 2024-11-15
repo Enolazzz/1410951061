@@ -1,4 +1,4 @@
-//install node js
+//install: node js
 //install web server package: express >npm install express
 var express = require("express");
 var server = express();
@@ -7,5 +7,10 @@ var server = express();
 server.use(express.static(__dirname+"/AgencyProject"));
 
 server.listen(80, ()=>{
-    console.log("Server is running at port 80.")
+    console.log("Server is running at port 80.");
+})
+
+server.get("/services",(req, res)=>{
+    //DB
+
 })
