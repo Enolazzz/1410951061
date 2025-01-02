@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<section id="messageBoard">
+    <h2 class="text-center">留言板</h2>
+    <div class="container">
+      <form id="messageForm">
+        <div class="form-group">
+          <label for="username">名稱：</label>
+          <input type="text" id="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="message">留言：</label>
+          <textarea id="message" class="form-control" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">提交</button>
+      </form>
+      <ul id="messagesList" class="list-group mt-4">
+        <!-- 留言會動態載入 -->
+      </ul>
+    </div>
+  </section>
+  </html>
+  
+  

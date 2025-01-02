@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Example</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script async="" src="https://img.gamewith.jp/gds-packages/core/4.1.0/gds-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src=>"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"</script>
+
+    <link rel="stylesheet" href="ST/EV.css">
+   
+</head>
+<body>
+<div id="menu" class="carousel slide" data-bs-ride="carousel" style="width: 70%; margin: 0 auto;">
+    <ul>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">遊戲介紹</a></li>
+        <li><a href="#">牌組推薦</a></li>
+    </ul>
+</div>
+<!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel" style="width: 70%; margin: 0 auto;">
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="IM/14268.jpg" alt="Los Angeles" class="d-block mx-auto" style="max-height: 400px; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+      <img src="IM/OIP (1).jpg" alt="Chicago" class="d-block mx-auto" style="max-height: 400px; object-fit: cover;">
+    </div>
+    <div class="carousel-item">
+      <img src="IM/OIP.jpg" alt="New York" class="d-block mx-auto" style="max-height: 400px; object-fit: cover;">
+    </div>
+  </div>
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<div id="filter">
+  <button type="button" class="btn btn-primary" value="all">所有卡片</button>
+  <button type="button" class="btn btn-primary" value="grass">草系</button>
+  <button type="button" class="btn btn-primary" onclick="filterCards('Mewtwo EX')">超能系</button>
+  <button type="button" class="btn btn-primary" onclick="filterCards('Pikachu EX')">電系</button>
+  <button type="button" class="btn btn-primary" onclick="filterCards('Starmie Articuno EX')">水系</button>
+</div>
+ <div id="card-container">
+  <div v-for="item in Services" :key="item.id" class="card" :id="item.name" >
+     
+      <img :src="item.img" alt="Service Image">
+      <p>{{item.name}}</p>
+   
+  </div>
+ </div>
+<script>
+
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="js/bs5vue.js"></script>
+<!-- <script>
+  const {createApp,ref}  = Vue;
+
+var myService = createApp({
+    data() {
+        return{
+            Services:[
+                { id: 40, type: 'grass', name: '坐騎山羊', img: 'IM/坐騎山羊.webp' },
+            ]
+        }
+    }
+}).mount("#card-container"); -->
+</script>
+</body>
+</html>
+
