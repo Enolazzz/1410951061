@@ -1,0 +1,406 @@
+*{
+    margin: 0; /* 設定所有元素的外邊距為 0 */
+    padding: 0; /* 設定所有元素的內邊距為 0 */
+    box-sizing: border-box; /* 設定盒模型的計算方式為 border-box */
+}
+
+.ul{
+    text-align: center;
+    display: block;
+}
+.mobile-menu{
+    text-align: center;
+    display: none;
+}
+
+@media (max-width:500px){
+    
+    /* 螢幕寬度小於500px */
+
+    .body{
+        flex-wrap: wrap;
+        min-height: 100%;
+        min-width: 500px;
+        justify-content: center;
+        align-items: center;
+        border: 200px;
+
+    }
+    .container{
+        flex-wrap: wrap;
+        border: 200px;
+    }
+    .card-wrapper{
+        width: 90%;
+    }
+    header{
+        flex-wrap: wrap;
+        width: 90%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+    }
+    .h1{
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    header ul{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: none;
+    }
+
+    .header ul li{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        display: none;
+    }
+    
+    footer{
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: none;
+    }
+
+    p2{
+        padding-top: 100px;
+        align-items: end;
+        padding: auto;
+    }
+    
+
+    .mobile-menu{
+        text-align: center;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        padding-top:60px;
+        padding-left:400px;
+        transform: 0.5s ease;
+    }
+
+    .list-button{
+        opacity: 100%;
+        border-color: transparent;
+        color:#ffffff;
+        background: none;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4);
+        
+    }
+
+    .list-button:hover{
+        transform: scale(1.2); /* 滑鼠懸停 */
+        animation: shake 0.5s;
+    }
+
+    @keyframes shake {
+        0%{ transform: translate(0,0);}
+        25%{ transform: translate(-10px,0);}
+        50%{ transform: translate(10,0);}
+        75%{ transform: translate(-10px,0);}
+        100%{ transform: translate(0,0);}
+        
+    }
+
+}
+
+.banner-container {
+    background-image: url('final/image/bg-home.jpg');
+    border: 5px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height according to your needs */
+    position: relative;
+     /*黑色遮罩 */
+     background-color: rgba(0, 0, 0, .6);
+     /* 設置背景混和*/
+     background-blend-mode: multiply;
+  }
+
+header {
+    background-image: url('final/image/bg-home.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /*黑色遮罩 */
+    background-color: rgba(0, 0, 0, .6);
+    /* 設置背景混和*/
+    background-blend-mode: multiply;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+header ul {
+    position: absolute;
+    right: 0vw;
+    top: 50px;
+    line-height: 50px;
+    padding-bottom: 50px;
+    
+}
+
+h1{
+    position: absolute;
+    left: 50px;
+    top: 60px;
+    line-height: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 210px;
+    text-indent: 10px;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                 0 0 20px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.4);
+    animation: flicker 3.1s infinite;
+}
+
+/* 閃電效果 */
+@keyframes flicker {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1),
+                     0 0 60px rgba(255, 255, 255, 0.8),
+                     0 0 80px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes lightning-strike {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+header a {
+    color: white;
+    text-decoration-line: none;
+    position: relative; /* 為了底線動畫的相對定位 */
+    padding-bottom: 5px; /* 為底線預留空間 */
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #c89b3c;/* 改變文字顏色 */
+    text-decoration: underline hidden;
+}
+
+/* 滑動底線效果 */
+header a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: wheat; /* 底線顏色 */
+    transition: width 0.3s ease-in-out;
+}
+
+header a:hover::after {
+    width: 100%; /* 滑鼠懸停時底線從左到右展開 */
+}
+
+header li {
+    display:inline;
+    margin-right:4vw; /*vw=view width 螢幕可視範圍高度百分比 */
+
+}
+
+.news{
+    background-color: antiquewhite;
+    color: white;
+    height: 85vw;
+    background-image: url('final/image/bg-home.jpg');
+    /*黑色遮罩 */
+    background-color: rgba(0, 0, 0, .6);
+    /* 設置背景混和*/
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.news blockquote {
+    font-family: 'monospace';
+    color: white;
+    font-size: 12px;
+}
+
+.news h2 {
+    font-size: 10px;
+    font-family: 'Trebuchet MS';
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 5px; /*圓角*/
+}
+
+ main {
+    background-color: antiquewhite;
+    color: white;
+    height: 85vw;
+    background-image: url("final/image/bg-home.jpg");
+    /*黑色遮罩 */
+    background-color: rgba(0, 0, 0, .6);
+    /* 設置背景混和*/
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    }
+
+.trip {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 200px 50px 100px;
+}
+
+.trip div {
+    width:200px;
+    text-align: center;
+}
+.trip img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.card-list .card-item {
+    list-style: none;
+
+}
+
+.card-list .card-item .card-link {
+    user-select: none;
+    width:250px;
+    height:350px;
+    display:block;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 10px rgba(32, 32, 32, 0.05);
+    transition: 0.2s ease;
+
+}
+
+.card-list .card-item .card-link:hover {
+    border-color: #ffffff51;
+}
+
+.card-list .card-link .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-list .card-link .card-button {
+    height: 35px;
+    width: 35px;
+    color: #ffffffc3;
+    border-radius: 50%;
+    margin: 10px 0 5px;
+    background: none;
+    cursor: pointer;
+    border: 2px solid #ffffff1d;
+    transform: rotate(-45deg);
+    transform: 0.4s ease;
+
+}
+
+.card-list .card-link:hover .card-button {
+    color: #ffffff;
+}
+
+@media (max-width: 768px){
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        width: 100%;
+        height: 768px;
+    }
+    .img{
+        flex-direction: column;
+        width:600px;
+        height:100%;
+    }
+}
+
+footer {
+    font-size: 12px;
+    height: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    letter-spacing: 0.1ch; /*字元間距 */
+    background-image: url("final/image/bg-home.jpg");
+    /*黑色遮罩 */
+    background-color: rgba(0, 0, 0, .6);
+    /* 設置背景混和*/
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: white;
+    font-weight: bold;
+    margin-top: 0vw;
+    
+}
+
+P {
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+p2 {
+    opacity:80%;
+}
