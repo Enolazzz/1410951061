@@ -11,15 +11,19 @@ server.use(bodyParser.urlencoded());
 
 
 var DB = require("nedb-promises");
-var ProfolioDB = DB.create(__dirname+"/indexhome.db");
- 
+var ProfolioDB = DB.create(__dirname+"/profolio.db");
+
+//ProfolioDB.insert([
+//    { id: 1, type: 'section1', name: 'section1', img: 'image/1/IMG_0921.jpg' ,text:'安安安安安安'},
+//    { id: 2, type: 'section2', name: 'section2', img: 'image/2/IMG_7936.JPG' },
+//])
 server.get("/strollcontainer", (req, res)=>{
     //DB find
     var Services=[
-    { id: 1, type: 'section1', name: 'section1', img: 'image/1/IMG_0921.jpg' },
-    { id: 2, type: 'section2', name: 'section2', img: 'image/2/IMG_7936.JPG' },
-];
-res.send(Services)
+        { id: 1, type: 'section1', name: 'section1', img: 'image/1/IMG_0921.jpg' ,text:'安安安安安安'},
+        { id: 2, type: 'section2', name: 'section2', img: 'image/2/IMG_7936.JPG' ,text:'安安安安安安'},
+    ];
+    res.send(Services)
 });
 
 server.get("/Enolazzz", (req,res)=>{
@@ -43,6 +47,6 @@ server.get("/Enolazzz", (req,res)=>{
      // });
 })
 
-server.listen(80, ()=>{
+server.listen(8080, ()=>{
     console.log("Server is running at port 80.");
 })
