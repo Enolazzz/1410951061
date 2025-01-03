@@ -5,7 +5,7 @@ var server = express();
 var bodyParser = require("body-parser");
 
 //web root
-server.use(express.static(__dirname+"/Enolazzz"));
+server.use(express.static(__dirname+"/2"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded());
 
@@ -26,7 +26,7 @@ server.get("/strollcontainer", (req, res)=>{
     res.send(Services)
 });
 
-server.get("/Enolazzz", (req,res)=>{
+server.get("/2", (req,res)=>{
     DB
      ProfolioDB.find({}).then(results=>{
        if(results != null){
