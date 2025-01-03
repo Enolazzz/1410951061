@@ -8,7 +8,7 @@ var myService = createApp({
             ]
         }
     }
-}).mount("#strollcontainer");
+}).mount("#img");
 
 
 //myService.Services.push({icon: "fa-lock", heading:"Web Security", text:"asdf adf adf"})
@@ -19,7 +19,7 @@ $.ajax({
     method: "get",
     dataType: "json",
     success: results=>{
-        vueProfolio.Portfolio = results;
+        myService.Services = results;
     }
 
 })

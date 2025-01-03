@@ -30,6 +30,15 @@ color: white;
 text-align: center;
 }
 
+.section3{
+    background-image: url('image/3/IMG_2042.jpg');
+    background-position: 100px -1300px;
+    text-shadow: 5px 4px 5px #3b3b3b;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    }
+
 .p1{
 font-size: 14px;
 font-family: 'Trebuchet MS';
