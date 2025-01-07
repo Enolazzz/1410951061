@@ -10,57 +10,10 @@ body {
         width: 100%;
 }
 
-header {
-    position: relative; /* 相對定位 */
-    height: 210px;
-    width: 100%;
-    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
-    background-attachment: fixed; /* 固定背景 */
-    background-size: 100% 100%; /* 背景圖片填滿容器 */
-    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    color: white; /* 字體顏色 */
-    font-family:'Times New Roman', Times, serif;
-    font-weight: bold;
-}
-
-header a {
-    position: relative; /* 底線動畫相對定位 */
-    color: white; /* 連結顏色 */
-    transition: color 0.3s; /* 顏色過渡效果 */
-    padding-bottom: 5px;
-    text-decoration-line: none; /* 無下劃線 */
-}
-
-header a:hover {
-    color: #c89b3c; /* 鼠標放在列表上時改變文字顏色 */
-    text-decoration-line: none;
-}
-
-/* 滑動底線效果 */
-header a::after {
-    position: absolute; /* 絕對定位 */
-    content: ''; /* 內容為空 */
-    left: 0; 
-    bottom: 0; 
-    width: 0; /* 底線寬度 */
-    height: 2px; /* 底線高度 */
-    background-color: wheat; /* 底線顏色 */
-    transition: width 0.3s ease-in-out; /* 底線過渡效果 */
-}
-
-header a:hover::after {
-    width: 100%; /* 鼠標放置時底線從左到右展開 */
-}
-
-header li {
-    display: inline; /* 列表項行內顯示 */
-    margin-right: 4vw; /* 右邊距 */
-}
-
+/* logo */
 h1{
     position: absolute; /* 絕對定位 */
-    text-indent: 10px; /* 文本縮進 */
+    text-indent: 50px; /* 文字縮排 */
     left: 50px; /* 左邊距 */
     top: 60px; /* 上邊距 */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 文字陰影 */
@@ -69,7 +22,7 @@ h1{
     animation: flicker 3.1s infinite; /* 閃爍動畫 */
 }
 
-/* h1閃電效果 */
+/* logo閃電效果 */
 @keyframes flicker {
     0%, 100% {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
@@ -92,12 +45,67 @@ h1{
     }
 }
 
-ul{
-    position: absolute; /* 絕對定位 */
-    right: 0vw; /* 右邊距為 0 */
-    top: 50px; /* 上邊距為 50px */
-    line-height: 80px;
+/* 導覽列 */
+header {
+    position: relative; /* 相對定位 */
+    height: 200px;
+    width: 100%;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
+    background-blend-mode: multiply; /* 設定背景混合模式 */
+    color: white; /* 字體顏色 */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+ul {
+    position:relative;
     font-size: 14px;
+    color: white; /* 字體顏色 */
+}
+
+ul li {
+    color: #fff;
+    display: inline; /* 列表項行內顯示 */
+    margin-right: 3vw; /* 右邊距 */
+}
+
+ul li a {
+    color: white !important; /* 連結顏色 */
+    position: relative; /* 底線動畫相對定位 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+    text-decoration-line: none; /* 無下劃線 */
+}
+
+ul li a:hover {
+    color: #c89b3c; /* 鼠標放在列表上時改變文字顏色 */
+    text-decoration-line: none;
+}
+
+/* 滑動底線效果 */
+ul li a::after {
+    position: absolute; /* 絕對定位 */
+    content: ''; /* 內容為空 */
+    left: 0; 
+    bottom: 0; 
+    width: 0; /* 底線寬度 */
+    height: 2px; /* 底線高度 */
+    background-color: wheat; /* 底線顏色 */
+    transition: width 0.3s ease-in-out; /* 底線過渡效果 */
+}
+
+ul li a:hover::after {
+    width: 100%; /* 鼠標放置時底線從左到右展開 */
+}
+
+main{
+    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
+    background-blend-mode: multiply; /* 設定背景混合模式 */
 }
 
 main{
@@ -109,11 +117,7 @@ main{
 }
 
 /* 自我介紹 */
-
 .introduction {
-    position: relative; 
-    display:flex;
-    padding: auto;
     align-items: center;
     justify-items:center;
     width: 100%;
@@ -123,12 +127,15 @@ main{
 
 /* 大頭貼 */
 .profile-pic { 
-    background-image: url('image/profile-pic.jpg');
-    background-size: cover; /* 圖片填滿 */
     width: 200px;
     height: 200px; 
+    
+    background-image: url('image/profile-pic.jpg');
+    background-size: cover; /* 圖片填滿 */
+    
     border-radius: 50%; /* 圓形 */
     transition: transform 0.5s; /*滑鼠放大頭貼上有平滑效果 */
+    margin-left: -400px;
    
 }
 
@@ -138,8 +145,9 @@ main{
 }
 
 .profile-text {
-    flex-direction: column; /* 垂直排列*/
-    padding-left: 20px; /* 調整左邊距以增加間隔 */
+    margin-left: 200px;
+    color: #fff;
+    padding-left: 10px; /* 調整左邊距以增加間隔 */
 }
 
 .animationContainer {
@@ -275,7 +283,7 @@ button a{
 }
 
 footer {
-    padding-top: 50px;
+    padding-top: 100px;
     background-image: url('image/bg-home.jpg'); /* 背景圖片 */
     background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
     background-blend-mode: multiply; /* 背景混合模式 */

@@ -6,7 +6,7 @@
     <title>works</title>
 
     <!-- css -->
-    <link rel="stylesheet" href="style-works.css">
+    <link rel="stylesheet" href="style-works.css"> <!-- 頁面css -->
 
     <!-- Latest compiled JavaScript -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +14,7 @@
     
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script async="" src="https://img.gamewith.jp/gds-packages/core/4.1.0/gds-core.min.js"></script>
+    <script src="https://img.gamewith.jp/gds-packages/core/4.1.0/gds-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src=>"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"</script>
@@ -25,63 +25,88 @@
 <body>
 
 <header>
-        <div class="thunder-container"></div>
-        <h1>zzz</h1>
+    <!-- 標題logo -->
+    <h1>zzz</h1>
 
-    <ul>
-        <li><a href="intex.html">home</a></li>
-        <li><a href="about.html">about</a></li>
-        <li><a href="works.html">works</a></li>
-        <li><a href="trip.html">trip</a></li>
+    <!-- 導覽列 -->
+    <nav class="navbar navbar-expand-sm justify-content-end">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="intex.html">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="works.html">works</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="trip.html">trip</a>
+        </li>
     </ul>
 
 </header>
 
 <main>
-    <div class="shell">
-
-        <div class="box">
-            <img src="image/works/Gcxwkz5bcAM2uPm.jpg">
-            <span>cheering kit-front</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/GcxwloZbcAIe2r5.jpg">
-            <span>cheering kit-back</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/1.png">
-            <span>cheering fan-front</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/5.png">
-            <span>cheering fan-back</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/52425144144_2c268517b0_o.jpg">
-            <span>sky</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/52425374748_bb56385921_o.jpg">
-            <span>gap</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/52510189671_00ec84be96_o.jpg">
-            <span>no title</span>
-        </div>
-
-        <div class="box">
-            <img src="image/works/52510736033_6198f5478f_o.jpg">
-            <span>no title</span>
-
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2 g-lg-3">
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/Gcxwkz5bcAM2uPm.jpg" class="img-fluid" alt="cheering kit-front">
+                    <span>cheering kit-front</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/GcxwloZbcAIe2r5.jpg" class="img-fluid" alt="cheering kit-back">
+                    <span>cheering kit-back</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/1.png" class="img-fluid" alt="cheering fan-front">
+                    <span>cheering fan-front</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/5.png" class="img-fluid" alt="cheering fan-back">
+                    <span>cheering fan-back</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/52425144144_2c268517b0_o.jpg" class="img-fluid" alt="sky">
+                    <span>sky</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/52425374748_bb56385921_o.jpg" class="img-fluid" alt="gap">
+                    <span>gap</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/52510189671_00ec84be96_o.jpg" class="img-fluid" alt="no title">
+                    <span>no title</span>
+                </div>
+            </div>
+    
+            <div class="col">
+                <div class="box">
+                    <img src="image/works/52510736033_6198f5478f_o.jpg" class="img-fluid" alt="no title">
+                    <span>no title</span>
+                </div>
+            </div>
         </div>
     </div>
-
 </main>
 
 <footer>

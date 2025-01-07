@@ -10,6 +10,42 @@ body {
         width: 100%;
 }
 
+/* logo */
+h1{
+    position: absolute; /* 絕對定位 */
+    text-indent: 50px; /* 文字縮排 */
+    left: 50px; /* 左邊距 */
+    top: 60px; /* 上邊距 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 文字陰影 */
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    animation: flicker 3.1s infinite; /* 閃爍動畫 */
+}
+
+/* logo閃電效果 */
+@keyframes flicker {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1), /* 增強陰影 */
+                     0 0 60px rgba(255, 255, 255, 0.8),
+                     0 0 80px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes lightning-strike {
+    0%, 100% {
+        opacity: 0; /* 初始和結束時透明 */
+    }
+    50% {
+        opacity: 0.8; /* 中間時不透明 */
+    }
+}
+
+/* 導覽列 */
 header {
     position: relative; /* 相對定位 */
     height: 200px;
@@ -23,8 +59,6 @@ header {
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
 }
-
-
 
 ul {
     position:relative;
@@ -66,39 +100,7 @@ ul li a:hover::after {
     width: 100%; /* 鼠標放置時底線從左到右展開 */
 }
 
-h1{
-    position: absolute; /* 絕對定位 */
-    text-indent: 20px; /* 文本縮進 */
-    left: 50px; /* 左邊距 */
-    top: 60px; /* 上邊距 */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 文字陰影 */
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
-    animation: flicker 3.1s infinite; /* 閃爍動畫 */
-}
 
-/* logo閃電效果 */
-@keyframes flicker {
-    0%, 100% {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        text-shadow: 0 0 40px rgba(255, 255, 255, 1), /* 增強陰影 */
-                     0 0 60px rgba(255, 255, 255, 0.8),
-                     0 0 80px rgba(255, 255, 255, 0.6);
-    }
-}
-
-@keyframes lightning-strike {
-    0%, 100% {
-        opacity: 0; /* 初始和結束時透明 */
-    }
-    50% {
-        opacity: 0.8; /* 中間時不透明 */
-    }
-}
 
 main{
     background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
