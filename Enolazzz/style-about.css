@@ -1,0 +1,305 @@
+*{
+    margin: 0; /* 設定所有元素的外邊距為 0 */
+    padding: 0; /* 設定所有元素的內邊距為 0 */
+    box-sizing: border-box; /* 設定盒模型的計算方式為 border-box */
+}
+
+body {
+        flex-wrap: wrap; /* 允許子元素換行 */
+        height: 100%;
+        width: 100%;
+}
+
+/* logo */
+h1{
+    position: absolute; /* 絕對定位 */
+    text-indent: 50px; /* 文字縮排 */
+    left: 50px; /* 左邊距 */
+    top: 60px; /* 上邊距 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 文字陰影 */
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    animation: flicker 3.1s infinite; /* 閃爍動畫 */
+}
+
+/* logo閃電效果 */
+@keyframes flicker {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(255, 255, 255, 1), /* 增強陰影 */
+                     0 0 60px rgba(255, 255, 255, 0.8),
+                     0 0 80px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes lightning-strike {
+    0%, 100% {
+        opacity: 0; /* 初始和結束時透明 */
+    }
+    50% {
+        opacity: 0.8; /* 中間時不透明 */
+    }
+}
+
+/* 導覽列 */
+header {
+    position: relative; /* 相對定位 */
+    height: 200px;
+    width: 100%;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
+    background-blend-mode: multiply; /* 設定背景混合模式 */
+    color: white; /* 字體顏色 */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+ul {
+    position:relative;
+    font-size: 14px;
+    color: white; /* 字體顏色 */
+}
+
+ul li {
+    color: #fff;
+    display: inline; /* 列表項行內顯示 */
+    margin-right: 3vw; /* 右邊距 */
+}
+
+ul li a {
+    color: white !important; /* 連結顏色 */
+    position: relative; /* 底線動畫相對定位 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+    text-decoration-line: none; /* 無下劃線 */
+}
+
+ul li a:hover {
+    color: #c89b3c; /* 鼠標放在列表上時改變文字顏色 */
+    text-decoration-line: none;
+}
+
+/* 滑動底線效果 */
+ul li a::after {
+    position: absolute; /* 絕對定位 */
+    content: ''; /* 內容為空 */
+    left: 0; 
+    bottom: 0; 
+    width: 0; /* 底線寬度 */
+    height: 2px; /* 底線高度 */
+    background-color: wheat; /* 底線顏色 */
+    transition: width 0.3s ease-in-out; /* 底線過渡效果 */
+}
+
+ul li a:hover::after {
+    width: 100%; /* 鼠標放置時底線從左到右展開 */
+}
+
+main{
+    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
+    background-blend-mode: multiply; /* 設定背景混合模式 */
+}
+
+main{
+    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
+    background-blend-mode: multiply; /* 背景混合模式 */
+}
+
+/* 自我介紹 */
+.introduction {
+    align-items: center;
+    justify-items:center;
+    width: 100%;
+    height: 100vh;
+    text-align:left; 
+}
+
+/* 大頭貼 */
+.profile-pic { 
+    width: 200px;
+    height: 200px; 
+    
+    background-image: url('image/profile-pic.jpg');
+    background-size: cover; /* 圖片填滿 */
+    
+    border-radius: 50%; /* 圓形 */
+    transition: transform 0.5s; /*滑鼠放大頭貼上有平滑效果 */
+    margin-left: -400px;
+   
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* 滑鼠放大頭貼時放大 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 陰影 */
+}
+
+.profile-text {
+    margin-left: 200px;
+    color: #fff;
+    padding-left: 10px; /* 調整左邊距以增加間隔 */
+}
+
+.animationContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+.loader {
+    padding-left: 650px;
+    position: relative;
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    animation: animate 8s linear infinite;
+}
+@keyframes animate {
+    0%,20%
+    {
+        transform: scaleX(0);
+    }
+    40%
+    {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    40.000001%,60%
+    {
+        transform: scaleX(1);
+        transform-origin: right; 
+    }
+    80%,100%
+    {
+        transform: scaleX(0);
+        transform-origin: right; 
+    }
+}
+
+.loader::after
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background: rgb(241, 255, 170);
+    border-radius: 50%;
+    animation: animateDot 8s linear infinite;
+}
+
+@keyframes animateDot {
+    0%
+    {
+        transform:translateY(-50%) scale(0);
+    }
+    5%
+    {
+        transform:translateY(-50%) scale(1);
+    }
+    15%,20%
+    {
+        transform:translateY(-50%) scale(1);
+        box-shadow: 
+        0 0 0 4px rgb(241, 255, 170),
+        0 0 20px rgb(241, 255, 170),
+        0 0 40px 5px rgb(241, 255, 170),
+        0 0 60px 10px rgb(241, 255, 170);
+    }
+    40%
+    {
+        transform:translateY(-50%) scale(1) translateX(395px);
+    }
+    80%
+    {
+        transform:translateY(-50%) scale(1) translateX(395px);
+        box-shadow: 
+        0 0 0 4px rgb(241, 255, 170),
+        0 0 20px rgb(241, 255, 170),
+        0 0 40px 5px rgb(241, 255, 170),
+        0 0 60px 10px rgb(241, 255, 170);
+    }
+    95%
+    {
+        transform:translateY(-50%) scale(1) translateX(395px);
+        box-shadow: none;
+    }
+    100%
+    {
+        transform:translateY(-50%) scale(0) translateX(395px);
+    }
+
+}
+}
+
+.contractme {
+    font-weight: bold; /* 設定字體為粗體 */
+    justify-items:center;
+    border: transparent;
+  
+    letter-spacing: 0.1ch;
+
+    
+}
+button a{
+    color: rgb(0, 0, 0); /* 設定連結顏色*/
+    font-family: 'Courier New', Courier, monospace; /* 設定字型 */
+    background-color: transparent; /* 設定背景為透明 */
+    border: none; /* 移除邊框 */
+    text-decoration: none;
+}
+
+.context input{
+    width: 200px;
+    height: 200px;
+    opacity: 80%;
+    direction: ltr;
+}
+
+.contractme input[type="submit"]{
+    opacity: 80%;
+    align-items:center;
+    justify-items:center;
+    height: 30px;
+    width: 100px;
+    font-size: 14px;
+    direction: ltr;
+}
+
+footer {
+    padding-top: 100px;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
+    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
+    background-blend-mode: multiply; /* 背景混合模式 */
+    background-size: cover; /* 背景圖片覆蓋 */
+    background-position: center; /* 置中 */
+    background-repeat: no-repeat; /* 不重複背景 */
+    background-attachment: fixed; /* 固定背景 */
+    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    text-align: center; /* 文字置中 */
+}
+
+p2{
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1ch; /* 字元間距 */
+    font-family:'Times New Roman', Times, serif;
+    opacity: 80%; /* 設定透明度為 80% */
+}

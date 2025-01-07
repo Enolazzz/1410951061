@@ -1,0 +1,39 @@
+ /* 圖片視差滾動 */
+
+ .stoll {
+    display: flex; /* 彈性 */
+    margin: 0 auto; /* 上下外邊距0 左右邊距自動居中*/
+    align-items: center; /* 垂直置中對齊 */
+    justify-content: center; /* 置中對齊 */
+    /* 圖片 */
+    max-width: 1000px; /* 電腦尺寸 */
+    max-height: 400px;
+    min-width: 400px; /* 行動式尺寸 */
+    min-height: 150px;
+    background-attachment: fixed; /* 圖片固定 */
+    background-position: center center; /* 圖片顯示部分 */
+    background-size: cover; /* 保持圖片比例 */
+    /* 文字 */
+    font-weight: bold;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+    color: white;
+}
+
+.section1 {
+    background-image: url('image/1/IMG_0921.jpg');
+    text-shadow: 5px 4px 5px #f9f9f9; /* 文字陰影 */
+}
+
+.section2 {
+    background-image: url('image/2/IMG_7936.JPG');
+    text-shadow: 5px 4px 5px #f9f9f9;
+    background-position: 100px -1300px;
+}
+
+.section3 {
+    background-image: url('image/3/IMG_2042.jpg');
+    text-shadow: 5px 4px 5px #f9f9f9;  
+    background-position: 100px -1000px;
+    }
