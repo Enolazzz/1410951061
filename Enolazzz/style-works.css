@@ -1,155 +1,77 @@
-* {
+*{
     margin: 0; /* 設定所有元素的外邊距為 0 */
     padding: 0; /* 設定所有元素的內邊距為 0 */
     box-sizing: border-box; /* 設定盒模型的計算方式為 border-box */
 }
 
-@media (min-width: 1280px) {
-    body {
-        height: 100%; /* 設定高度為 100% */
-        width: 100%; /* 設定寬度為 500px */
-    }
-
-    main{
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        height: 100vh;
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-        background-blend-mode: multiply; /* 設定背景混合模式 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-        background-position: center; /* 背景置中 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-attachment: fixed; /* 固定背景 */
-        background-size: 100% 100%; /* 背景圖片填滿容器 */
-    }
-
-    .container {
-        flex-wrap: wrap; /* 允許換行 */
-    }
-
-    .card-wrapper {
-        width: 90%; /* 設定寬度為 90% */
-    }
-
-    header {
-        flex-wrap: wrap; /* 允許標頭內的元素換行 */
-        width: 500px; /* 設定標頭寬度為 500px */
-        height: 100%; /* 設定標頭高度為 100% */
-        justify-content: center; /* 置中對齊內容 */
-        align-items: center; /* 垂直置中對齊內容 */
-        object-fit: contain; /* 內容適應容器 */
-    }
-
-    h1 {
-        font-size: 12px; 
-    }
-
-    header ul {
-        justify-content: center; /* 置中對齊列表 */
-        align-items: center; /* 垂直置中對齊列表 */
-        text-align: center; /* 設定文本居中 */
-        display: block;  /* 隱藏列表 */
-    }
-
-    .mobile-menu {
-        text-align: center; /* 設定漢堡選單文本居中 */
-        display: block; /* 顯示漢堡選單 */
-        justify-content: center; /* 置中對齊內容 */
-        align-items: center; /* 垂直置中對齊內容 */
-        background: none; /* 無背景 */
-        padding-top: 60px; /* 設定上內邊距為 60px */
-        padding-left: 400px; /* 設定左內邊距為 400px */
-        display: none;
-    }
-
-    .header ul li {
-        justify-content: center; /* 置中對齊列表項 */
-        align-items: center; /* 垂直置中對齊列表項 */
-        text-align: center; /* 設定文本居中 */
-        display: block; 
-    }
-
-    footer {
-        padding-top: 100px; /* 設定上內邊距為 100px */
-        padding-bottom: 100px; /* 設定下內邊距為 100px */
-        display: block; /* 隱藏頁腳 */
-    }
-
-    footer p2 {
-        padding-top: 100px; /* 設定 p2 的上內邊距為 100px */
-        align-items: end; /* 將內容對齊到底部 */
-        padding: auto; /* 自動設定內邊距 */
-    }
-
-    .list-button {
-        opacity: 100%; /* 設定透明度為 100% */
-        border-color: transparent; /* 設定邊框顏色為透明 */
-        color: #ffffff; /* 設定文字顏色為白色 */
-        background: none; /* 無背景 */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
-    }
-
-    .list-button:hover {
-        transform: scale(1.2); /* 滑鼠懸停時放大 */
-        animation: shake 0.5s; /* 添加抖動動畫 */
-    }
-
-    @keyframes shake {
-        0% { transform: translate(0, 0); } /* 初始位置 */
-        25% { transform: translate(-10px, 0); } /* 向左移動 */
-        50% { transform: translate(10px, 0); } /* 向右移動 */
-        75% { transform: translate(-10px, 0); } /* 向左移動 */
-        100% { transform: translate(0, 0); } /* 回到初始位置 */
-    }
+body {
+        flex-wrap: wrap; /* 允許子元素換行 */
+        height: 100%;
+        width: 100%;
 }
 
 header {
-    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    background-attachment: fixed; /* 固定背景 */
-    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    position: relative; /* 相對定位 */
+    height: 210px;
+    width: 100%;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
     background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    height: 100px; /* 設定高度為 100px */
-    width: 100%; /* 設定寬度為 100% */
-    position: relative; /* 設定相對定位 */
-    font-size: 14px; /* 設定字體大小為 14px */
-    font-weight: bold; /* 設定字體為粗體 */
-    height: 200px; 
-}
-
-ul {
-    position: absolute; /* 設定絕對定位 */
-    right: 0vw; /* 設定右邊距為 0 */
-    top: 50px; /* 設定上邊距為 50px */
-    line-height: 50px; /* 設定行高為 50px */
-}
-
-.list-button {
-    display: none; /* 隱藏列表按鈕 */
-}
-
-h1 {
-    position: absolute; /* 設定絕對定位 */
-    left: 50px; /* 設定左邊距為 50px */
-    top: 60px; /* 設定上邊距為 60px */
-    line-height: 10px; /* 設定行高為 10px */
+    background-blend-mode: multiply; /* 背景混合模式 */
+    background-size: cover; /* 背景覆蓋 */
+    background-position: center; /* 置中 */
     background-repeat: no-repeat; /* 不重複背景 */
-    background-position: center; /* 背景置中 */
-    width: 210px; /* 設定寬度為 210px */
-    text-indent: 10px; /* 設定文本縮進為 10px */
-    font-size: 4rem; /* 設定字體大小為 4rem */
-    color: white; /* 設定字體顏色為白色 */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                 0 0 20px rgba(255, 255, 255, 0.6),
-                 0 0 30px rgba(255, 255, 255, 0.4);
-    animation: flicker 3.1s infinite; /* 添加閃爍動畫 */
+    background-attachment: fixed; /* 固定背景 */    
+    color: white; /* 字體顏色 */
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
 }
 
-/* 閃電效果 */
+header a {
+    position: relative; /* 底線動畫相對定位 */
+    color: white; /* 連結顏色 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+    padding-bottom: 5px;
+    text-decoration-line: none; /* 無下劃線 */
+}
+
+header a:hover {
+    color: #c89b3c; /* 鼠標放在列表上時改變文字顏色 */
+    text-decoration-line: none;
+}
+
+/* 滑動底線效果 */
+header a::after {
+    position: absolute; /* 絕對定位 */
+    content: ''; /* 內容為空 */
+    left: 0; 
+    bottom: 0; 
+    width: 0; /* 底線寬度 */
+    height: 2px; /* 底線高度 */
+    background-color: wheat; /* 底線顏色 */
+    transition: width 0.3s ease-in-out; /* 底線過渡效果 */
+}
+
+header a:hover::after {
+    width: 100%; /* 鼠標放置時底線從左到右展開 */
+}
+
+header li {
+    display: inline; /* 列表項行內顯示 */
+    margin-right: 4vw; /* 右邊距 */
+}
+
+h1{
+    position: absolute; /* 絕對定位 */
+    text-indent: 10px; /* 文本縮進 */
+    left: 50px; /* 左邊距 */
+    top: 60px; /* 上邊距 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 文字陰影 */
+                     0 0 20px rgba(255, 255, 255, 0.6),
+                     0 0 30px rgba(255, 255, 255, 0.4);
+    animation: flicker 3.1s infinite; /* 閃爍動畫 */
+}
+
+/* h1閃電效果 */
 @keyframes flicker {
     0%, 100% {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
@@ -172,585 +94,104 @@ h1 {
     }
 }
 
-header a {
-    color: white; /* 設定連結顏色為白色 */
-    text-decoration-line: none; /* 無下劃線 */
-    position: relative; /* 為了底線動畫的相對定位 */
-    padding-bottom: 5px; /* 為底線預留空間 */
-    transition: color 0.3s; /* 設定顏色過渡效果 */
+ul{
+    position: absolute; /* 絕對定位 */
+    right: 0vw; /* 右邊距為 0 */
+    top: 50px; /* 上邊距為 50px */
+    line-height: 80px;
+    font-size: 14px;
 }
 
-header a:hover {
-    color: #c89b3c; /* 滑鼠懸停時改變文字顏色 */
-    text-decoration: underline hidden; /* 下劃線隱藏 */
-}
-
-/* 滑動底線效果 */
-header a::after {
-    content: ''; /* 設定內容為空 */
-    position: absolute; /* 設定絕對定位 */
-    left: 0; /* 設定左邊距為 0 */
-    bottom: 0; /* 設定下邊距為 0 */
-    width: 0; /* 初始寬度為 0 */
-    height: 2px; /* 設定底線高度為 2px */
-    background-color: wheat; /* 底線顏色 */
-    transition: width 0.3s ease-in-out; /* 設定寬度過渡效果 */
-}
-
-header a:hover::after {
-    width: 100%; /* 滑鼠懸停時底線從左到右展開 */
-}
-
-header li {
-    display: inline; /* 設定列表項為行內顯示 */
-    margin-right: 4vw; /* 設定右邊距為 4vw */
-}
-
-.introduction {
-   
-    align-items: center; /* 垂直置中對齊內容 */
-    justify-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+main{
     background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    background-size: cover; /* 背景圖片覆蓋容器 */
-    background-position: center; /* 背景置中 */
-    background-repeat: no-repeat; /* 不重複背景 */
     background-attachment: fixed; /* 固定背景 */
     background-size: 100% 100%; /* 背景圖片填滿容器 */
-}
-
-.profile-container {
-    padding: 200px 100px 200px 100px;
-    display: flex; /* 使用 Flexbox */
-    align-items: center;
-    justify-items: center;
-    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    background-size: cover; /* 背景圖片覆蓋容器 */
-    background-position: center; /* 背景置中 */
+    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
+    background-blend-mode: multiply; /* 背景混合模式 */
+    background-size: cover; /* 背景覆蓋 */
+    background-position: center; /* 置中 */
     background-repeat: no-repeat; /* 不重複背景 */
-    background-attachment: fixed; /* 固定背景 */
-    background-size: 100% 100%; /* 背景圖片填滿容器 */
-    color: white; /* 設定文字顏色為白色 */
-    font-weight: bold; /* 設定字體為粗體 */
+    background-attachment: fixed; /* 固定背景 */    
 }
 
-.profile-pic {
-    width: 200px; /* 大頭貼寬度 */
-    height: 200px; /* 大頭貼高度 */
-    border-radius: 50%; /* 圓形 */
-    background-image: url('image/profile-pic.jpg'); /* 替換為你的圖片網址 */
-    background-size: cover; /* 確保圖片填滿 */
-    margin: 10px 10px; /* 中心對齊 */
-    transition: transform 0.5s; /* 平滑過渡效果 */
-    margin-right: 30px; /* 調整右邊距以增加間隔 */
-}
-
-.profile-pic:hover {
-    transform: scale(1.1); /* 滑鼠懸停時放大 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 添加陰影效果 */
-}
-
-.profile-text {
-    display: flex; /* 使用 Flexbox */
-    flex-direction: column; /* 垂直排列文本 */
-    padding-left: 20px; /* 調整左邊距以增加間隔 */
-}
+/* 作品集 */
 
 .shell{
-    margin: 75px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
     align-items: center;
     justify-items: center;
-    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    background-size: cover; /* 背景圖片覆蓋容器 */
-    background-position: center; /* 背景置中 */
+    margin-top: -100px;
+    margin-bottom: -100px;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
+    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
+    background-blend-mode: multiply; /* 背景混合模式 */
+    background-size: cover; /* 背景覆蓋 */
+    background-position: center; /* 置中 */
     background-repeat: no-repeat; /* 不重複背景 */
-    background-attachment: fixed; /* 固定背景 */
-    background-size: 100% 100%; /* 背景圖片填滿容器 */
-    width: 90%;
-    height: 700px;
-    display: flex;
+    background-attachment: fixed; /* 固定背景 */    
 }
 
 .box{
-    font-family: 'Courier New', Courier, monospace;
+    flex: 1;/* 均分空間 */
     align-items: center;
     justify-items: center;
-    flex: 1;
-    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden; /* 隱藏超出頁面的內容 */
     margin:  20px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, .5);
-    border: 10px solid #ffffff00;
-    background-color: #ffffff;
-}
-.box>img{
-    width: 150%;
-    height: 80%;
-    object-fit: cover;
-    transition: 3s;
+    border: 10px solid #ffffff00; /*外框*/
+    background-color: #ffffff; /*作品集圖片背景*/
 }
 
+/* 作品集容器屬性 */
+.box>img{
+    object-fit:cover; /* 圖片填滿 */
+    width: 120%; /* 滑鼠放置圖片 縮放效果 */
+    height: 80%;
+    transition: 2s;/* 縮放速度 */
+}
+
+/* 文字排列 */
 .box>span{
-    font: 200 45px ;
-    text-align: center;
-    height: 15%;
     display: flex;
     justify-items: center;
     align-items: center;
+    text-align: center;
+    height: 15%;
+    
 }
+
+/* 查看作品集圖片放大%數 */
 .box:hover{
-    flex-basis: 40%;
+    flex-basis: 20%;
 }
+
+/* 歸原位的圖片大小*/
 .box:hover>img{
     width: 100%;
     height: 100%;
 }
 
 footer {
-    font-size: 12px; /* 設定字體大小為 12px */
-    display: flex; /* 設定為彈性盒子 */
-    height: 200px;
-    justify-content: center; /* 置中對齊內容 */
-    align-items: center; /* 垂直置中對齊內容 */
-    letter-spacing: 0.1ch; /* 設定字元間距 */
-    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-    background-blend-mode: multiply; /* 設定背景混合模式 */
-    background-size: cover; /* 背景圖片覆蓋容器 */
-    background-position: center; /* 背景置中 */
+    padding-top: 80px;
+    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
+    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
+    background-blend-mode: multiply; /* 背景混合模式 */
+    background-size: cover; /* 背景圖片覆蓋 */
+    background-position: center; /* 置中 */
     background-repeat: no-repeat; /* 不重複背景 */
     background-attachment: fixed; /* 固定背景 */
     background-size: 100% 100%; /* 背景圖片填滿容器 */
-    color: white; /* 設定文字顏色為白色 */
-    font-weight: bold; /* 設定字體為粗體 */
+    text-align: center; /* 文字置中 */
 }
 
-p2 {
+p2{
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.1ch; /* 字元間距 */
+    font-family:'Times New Roman', Times, serif;
     opacity: 80%; /* 設定透明度為 80% */
 }
-
-
-/* 在螢幕寬度小於 500px 時 手機響應式*/
-@media (max-width: 500px) {
-    body {
-        flex-wrap: wrap; /* 允許子元素換行 */
-        height: 100%; /* 設定高度為 100% */
-        width: 500px; /* 設定寬度為 500px */
-    }
-
-    .container {
-        flex-wrap: wrap; /* 允許容器內的元素換行 */
-    }
-
-    .card-wrapper {
-        width: 90%; /* 設定卡片包裝器的寬度為 90% */
-    }
-
-    header {
-        flex-wrap: wrap; /* 允許標頭內的元素換行 */
-        width: 500px; /* 設定標頭寬度為 500px */
-        height: 100%; /* 設定標頭高度為 100% */
-        justify-content: center; /* 置中對齊內容 */
-        align-items: center; /* 垂直置中對齊內容 */
-        object-fit: contain; /* 內容適應容器 */
-    }
-
-    h1 {
-        font-size: 18px; 
-    }
-
-    ul {
-        justify-content: center; /* 置中對齊列表 */
-        align-items: center; /* 垂直置中對齊列表 */
-        text-align: center; /* 設定文本居中 */
-        display: none;  /* 隱藏列表 */
-    }
-
-    .mobile-menu {
-        text-align: center; /* 設定漢堡選單文本居中 */
-        justify-content: center; /* 置中對齊內容 */
-        align-items: center; /* 垂直置中對齊內容 */
-        background: none; 
-        padding-top: 60px; /* 設定上內邊距為 60px */
-        padding-left: 400px; /* 設定左內邊距為 400px */
-        display: block; /* 顯示漢堡選單 */
-    }
-
-    .header ul li {
-        justify-content: center; /* 置中對齊列表項 */
-        align-items: center; /* 垂直置中對齊列表項 */
-        text-align: center; /* 設定文本居中 */
-        display: none; /* 隱藏列表項 */
-    }
-
-    footer {
-        padding-top: 100px; /* 設定上內邊距為 100px */
-        padding-bottom: 100px; /* 設定下內邊距為 100px */
-    }
-
-    p2 {
-        padding-top: 100px; /* 設定 p2 的上內邊距為 100px */
-        align-items: end; /* 將內容對齊到底部 */
-        padding: auto; /* 自動設定內邊距 */
-    }
-
-    .list-button {
-        opacity: 100%; /* 設定透明度為 100% */
-        border-color: transparent; /* 設定邊框顏色為透明 */
-        color: #ffffff; /* 設定文字顏色為白色 */
-        background: none; /* 無背景 */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
-    }
-
-    .list-button:hover {
-        transform: scale(1.2); /* 滑鼠懸停時放大 */
-        animation: shake 0.5s; /* 添加抖動動畫 */
-    }
-
-    @keyframes shake {
-        0% { transform: translate(0, 0); } /* 初始位置 */
-        25% { transform: translate(-10px, 0); } /* 向左移動 */
-        50% { transform: translate(10px, 0); } /* 向右移動 */
-        75% { transform: translate(-10px, 0); } /* 向左移動 */
-        100% { transform: translate(0, 0); } /* 回到初始位置 */
-    }
-
-    header {
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        background-attachment: fixed; /* 固定背景 */
-        background-size: 100% 100%; /* 背景圖片填滿容器 */
-        background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-        background-blend-mode: multiply; /* 設定背景混合模式 */
-        height: 100px; /* 設定高度為 100px */
-        width: 100%; /* 設定寬度為 100% */
-        position: relative; /* 設定相對定位 */
-        font-size: 14px; /* 設定字體大小為 14px */
-        font-weight: bold; /* 設定字體為粗體 */
-        background-attachment: scroll; /* 移除固定背景 */
-        background-size: cover; /* 保持背景完整顯示 */
-    }
-
-    main{
-        background-attachment: scroll; /* 移除固定背景 */
-        background-size: cover; /* 保持背景完整顯示 */
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-    }
-    
-    ul {
-        position: absolute; /* 設定絕對定位 */
-        right: 0vw; /* 設定右邊距為 0 */
-        top: 50px; /* 設定上邊距為 50px */
-        line-height: 50px; /* 設定行高為 50px */
-    }
-    
-    .list-button {
-        display: none; /* 隱藏列表按鈕 */
-    }
-    
-    h1 {
-        position: absolute; /* 設定絕對定位 */
-        left: 50px; /* 設定左邊距為 50px */
-        top: 60px; /* 設定上邊距為 60px */
-        line-height: 10px; /* 設定行高為 10px */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-position: center; /* 背景置中 */
-        width: 210px; /* 設定寬度為 210px */
-        text-indent: 10px; /* 設定文本縮進為 10px */
-        font-size: 4rem; /* 設定字體大小為 4rem */
-        color: white; /* 設定字體顏色為白色 */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                     0 0 20px rgba(255, 255, 255, 0.6),
-                     0 0 30px rgba(255, 255, 255, 0.4);
-        animation: flicker 3.1s infinite; /* 添加閃爍動畫 */
-    }
-    
-    /* 閃電效果 */
-    @keyframes flicker {
-        0%, 100% {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), /* 設定文字陰影 */
-                         0 0 20px rgba(255, 255, 255, 0.6),
-                         0 0 30px rgba(255, 255, 255, 0.4);
-        }
-        50% {
-            text-shadow: 0 0 40px rgba(255, 255, 255, 1), /* 增強陰影 */
-                         0 0 60px rgba(255, 255, 255, 0.8),
-                         0 0 80px rgba(255, 255, 255, 0.6);
-        }
-    }
-    
-    @keyframes lightning-strike {
-        0%, 100% {
-            opacity: 0; /* 初始和結束時透明 */
-        }
-        50% {
-            opacity: 0.8; /* 中間時不透明 */
-        }
-    }
-    
-    header a {
-        color: white; /* 設定連結顏色為白色 */
-        text-decoration-line: none; /* 無下劃線 */
-        position: relative; /* 為了底線動畫的相對定位 */
-        padding-bottom: 5px; /* 為底線預留空間 */
-        transition: color 0.3s; /* 設定顏色過渡效果 */
-    }
-    
-    header a:hover {
-        color: #c89b3c; /* 滑鼠懸停時改變文字顏色 */
-        text-decoration: underline hidden; /* 下劃線隱藏 */
-    }
-    
-    /* 滑動底線效果 */
-    header a::after {
-        content: ''; /* 設定內容為空 */
-        position: absolute; /* 設定絕對定位 */
-        left: 0; /* 設定左邊距為 0 */
-        bottom: 0; /* 設定下邊距為 0 */
-        width: 0; /* 初始寬度為 0 */
-        height: 2px; /* 設定底線高度為 2px */
-        background-color: wheat; /* 底線顏色 */
-        transition: width 0.3s ease-in-out; /* 設定寬度過渡效果 */
-    }
-    
-    header a:hover::after {
-        width: 100%; /* 滑鼠懸停時底線從左到右展開 */
-    }
-    
-    header li {
-        display: inline; /* 設定列表項為行內顯示 */
-        margin-right: 4vw; /* 設定右邊距為 4vw */
-    }
-    
-    .news {
-        padding-bottom: 400px; /* 設定下內邊距為 400px */
-        height: 100vh; 
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-        background-blend-mode: multiply; /* 設定背景混合模式 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-        background-position: center; /* 背景置中 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-attachment: fixed; /* 固定背景 */
-        background-size: 100% 100%; /* 背景圖片填滿容器 */
-        display: flex; /* 設定為彈性盒子 */
-        flex-direction: column; /* 設定為垂直排列 */
-        align-items: center; /* 置中對齊內容 */
-        justify-content: center; /* 垂直置中對齊內容 */
-        background-size: cover; /* 保持背景完整顯示 */
-    }
-    
-    
-    footer {
-        font-size: 12px; /* 設定字體大小為 12px */
-        height: 100vh;
-        align-items: center; /* 垂直置中對齊內容 */
-        letter-spacing: 0.1ch; /* 設定字元間距 */
-        background-size: 100% 100%;
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-        background-blend-mode: multiply; /* 設定背景混合模式 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-        background-position: center; /* 背景置中 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-attachment: fixed; /* 固定背景 */
-        background-size: 100% 100%; /* 背景圖片填滿容器 */
-        font-weight: bold; /* 設定字體為粗體 */
-    }
-    
-    p2 {
-        opacity: 80%; /* 設定透明度為 80% */
-        position: fixed;
-    }
-
-    .parallaxscrolling-container {
-        position: absolute; /* 設定絕對定位 */
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        position: relative;
-        height: 100vh; /* 設置足夠的高度 */
-        margin-top: 400px; /* 設定與 header 的間隔 */
-        margin-bottom: 200px;
-        align-items: center; /* 置中對齊內容 */
-        justify-content: center; /* 垂直置中對齊內容 */
-        background-attachment: fixed; /* 固定背景以實現視差效果 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-
-    }
-
-    .stoll{
-        min-height: 100vh;
-        padding-top: 50px; /* 設定內部間隔 */
-        text-align: center; /* 將文字置中 */
-        margin: 0 auto; /* 自動外邊距 */
-    }
-
-    .section1{
-        min-height: 400px;
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        position: relative;
-        background-attachment: fixed; /* 固定背景以實現視差效果 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-       
-    }
-
-    .section2{
-        background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-        position: absolute; /* 設定絕對定位 */
-        height: 100vh;
-        background-attachment: fixed; /* 固定背景以實現視差效果 */
-        background-repeat: no-repeat; /* 不重複背景 */
-        background-size: cover; /* 背景圖片覆蓋容器 */
-       
-    }
-
-    .banner-container {
-        background-image: url('image/bg-home.jpg');
-        border: 5px;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
-        height: 300px; /* Adjust the height according to your needs */
-        position: relative;
-        /*黑色遮罩 */
-        background-color: rgba(0, 0, 0, .6);
-        /* 設置背景混和*/
-        background-blend-mode: multiply;
-        }
-
-        .introduction {
-   
-            align-items: center; /* 垂直置中對齊內容 */
-            justify-items: center;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-            background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-            background-blend-mode: multiply; /* 設定背景混合模式 */
-            background-size: cover; /* 背景圖片覆蓋容器 */
-            background-position: center; /* 背景置中 */
-            background-repeat: no-repeat; /* 不重複背景 */
-            background-attachment: fixed; /* 固定背景 */
-            background-size: 100% 100%; /* 背景圖片填滿容器 */
-        }
-        
-        .profile-container {
-            padding: 200px 100px 200px 100px;
-            display: flex; /* 使用 Flexbox */
-            align-items: center;
-            justify-items: center;
-            background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-            background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-            background-blend-mode: multiply; /* 設定背景混合模式 */
-            background-size: cover; /* 背景圖片覆蓋容器 */
-            background-position: center; /* 背景置中 */
-            background-repeat: no-repeat; /* 不重複背景 */
-            background-attachment: fixed; /* 固定背景 */
-            background-size: 100% 100%; /* 背景圖片填滿容器 */
-            color: white; /* 設定文字顏色為白色 */
-            font-weight: bold; /* 設定字體為粗體 */
-        }
-        
-        .profile-pic {
-            width: 200px; /* 大頭貼寬度 */
-            height: 200px; /* 大頭貼高度 */
-            border-radius: 50%; /* 圓形 */
-            background-image: url('image/profile-pic.jpg'); /* 替換為你的圖片網址 */
-            background-size: cover; /* 確保圖片填滿 */
-            margin: 10px 10px; /* 中心對齊 */
-            transition: transform 0.5s; /* 平滑過渡效果 */
-            margin-right: 30px; /* 調整右邊距以增加間隔 */
-        }
-        
-        .profile-pic:hover {
-            transform: scale(1.1); /* 滑鼠懸停時放大 */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 添加陰影效果 */
-        }
-        
-        .profile-text {
-            display: flex; /* 使用 Flexbox */
-            flex-direction: column; /* 垂直排列文本 */
-            padding-left: 20px; /* 調整左邊距以增加間隔 */
-        }
-
-        @property --percentage{
-            syntax: "<number>";
-            inherits: true;
-            initial-value: 0;
-          }
-          
-          @keyframes pieAni {
-            from {
-              --percentage: 0;
-            }
-          }
-          
-          .pie {
-            width: 150px;
-           
-            /* 寬高比 1:1 */
-            aspect-ratio: 1;
-          
-            display: inline-grid;
-            place-content: center;
-            margin: 5px;
-            font-size: 25px;
-            font-weight: bold;
-            font-family: sans-serif;
-            position: relative;
-          }
-          .pie::before{
-            content: "";
-            display: inline-block;
-            position: absolute;
-            border-radius: 50%;
-          
-            /* 等同於 top、right、bottom、left 皆設定 0 */
-            inset: 0;
-          
-            /* conic-gradient 線上資源: https://www.w3schools.com/css/css3_gradients_conic.asp */
-            background: conic-gradient(var(--color) calc(var(--percentage) * 1%),#0000 0%), #eee;
-          
-            /* radial-gradient 線上資源: https://www.w3schools.com/cssref/func_radial-gradient.php */
-            /* mask 線上資源: https://www.w3schools.com/css/css3_masking.asp */
-            /* mask 相關屬性，在 Chrome, Edge 需使用 -webkit- 前綴才支援 */
-            -webkit-mask-image: radial-gradient(farthest-side,#0000 calc(100% - 10px),#000 calc(100% - 10px));
-            mask-image: radial-gradient(farthest-side,#0000 calc(100% - 10px),#000 calc(100% - 10px));
-          }
-          .pie.ani{
-            animation-name: pieAni;
-            animation-duration: 2s;
-            animation-fill-mode: both;
-          }
-        
-        footer {
-            font-size: 12px; /* 設定字體大小為 12px */
-            display: flex; /* 設定為彈性盒子 */
-            height: 200px;
-            justify-content: center; /* 置中對齊內容 */
-            align-items: center; /* 垂直置中對齊內容 */
-            letter-spacing: 0.1ch; /* 設定字元間距 */
-            background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
-            background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
-            background-blend-mode: multiply; /* 設定背景混合模式 */
-            background-size: cover; /* 背景圖片覆蓋容器 */
-            background-position: center; /* 背景置中 */
-            background-repeat: no-repeat; /* 不重複背景 */
-            background-attachment: fixed; /* 固定背景 */
-            background-size: 100% 100%; /* 背景圖片填滿容器 */
-            color: white; /* 設定文字顏色為白色 */
-            font-weight: bold; /* 設定字體為粗體 */
-        }
-    
-}
-

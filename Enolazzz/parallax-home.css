@@ -1,62 +1,36 @@
+ /* 圖片視差滾動 */
 
-.stoll {
-    width: 1000px;
+ .stoll {
+    display: flex; /* 彈性盒子 */
     margin: 0 auto;
+    max-width: 1000px;
+    min-width: 400px;
     height: 400px;
-    padding: 40px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
-    line-height: 28px;
-}
-
-.section1{
-    background-image: url('image/1/IMG_0921.jpg');
-    text-shadow: 5px 4px 5px #3b3b3b;
-    font-weight: bold;
-    font-family: 'monospace';
+    align-items: center; /* 垂直置中對齊 */
+    justify-content: center; /* 置中對齊 */
+    background-attachment: fixed; /* 圖片固定 */
+    background-position: center center; /* 圖片顯示部分 */
+    background-size: cover; /* 保持圖片比例 */
+    text-align: center;
     color: white;
+    font-weight: bold;
     font-size: 16px;
-    text-align: center;
+    font-family:'Courier New', Courier, monospace
 }
 
-.section2{
-background-image: url('image/2/IMG_7936.JPG');
-background-position: 100px -1300px;
-text-shadow: 5px 4px 5px #3b3b3b;
-font-weight: bold;
-color: white;
-text-align: center;
+.section1 {
+    background-image: url('image/1/IMG_0921.jpg');
+    text-shadow: 5px 4px 5px #f9f9f9; /* 文字陰影 */
 }
 
-.section3{
-    background-image: url('image/3/IMG_2042.jpg');
+.section2 {
+    background-image: url('image/2/IMG_7936.JPG');
+    text-shadow: 5px 4px 5px #f9f9f9;
     background-position: 100px -1300px;
-    text-shadow: 5px 4px 5px #3b3b3b;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    }
-
-.p1{
-font-size: 14px;
-font-family: 'Trebuchet MS';
-border: 1px solid white;
-padding: 8px 10px;
-border-radius: 5px; /*圓角 */
-
 }
 
-@media (max-width: 500px) {
-    body {
-        flex-wrap: wrap; /* 允許子元素換行 */
-        height: 100%; /* 設定高度為 100% */
-        width: 500px; /* 設定寬度為 500px */
+.section3 {
+    background-image: url('image/3/IMG_2042.jpg');
+    text-shadow: 5px 4px 5px #f9f9f9;  
+    background-position: 100px -1000px;
     }
-
-    .container {
-        display: flex;
-        flex-wrap: wrap; /* 允許容器內的元素換行 */
-    }
-}
