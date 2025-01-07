@@ -7,9 +7,10 @@
     justify-content: center; /* 置中對齊 */
     /* 圖片 */
     max-width: 1000px; /* 電腦尺寸 */
-    max-height: 400px;
+    max-height: 200px;
     min-width: 400px; /* 行動式尺寸 */
-    min-height: 150px;
+    min-height: 350px;
+
     background-attachment: fixed; /* 圖片固定 */
     background-position: center center; /* 圖片顯示部分 */
     background-size: cover; /* 保持圖片比例 */
