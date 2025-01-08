@@ -111,63 +111,24 @@ main{
 }
 
 /* 作品集 */
-
-.shell{
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-items: center;
-    margin-top: -100px;
-    margin-bottom: -100px;
-    background-image: url('image/bg-home.jpg'); /* 背景圖片 */
-    background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
-    background-blend-mode: multiply; /* 背景混合模式 */
-    background-size: cover; /* 背景覆蓋 */
-    background-position: center; /* 置中 */
-    background-repeat: no-repeat; /* 不重複背景 */
-    background-attachment: fixed; /* 固定背景 */    
-}
-
 .box{
-    flex: 1;/* 均分空間 */
     align-items: center;
     justify-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    overflow: hidden; /* 隱藏超出頁面的內容 */
     margin:  20px;
     border: 10px solid #ffffff00; /*外框*/
     background-color: #ffffff; /*作品集圖片背景*/
 }
 
-/* 作品集容器屬性 */
-.box>img{
-    object-fit:cover; /* 圖片填滿 */
-    width: 120%; /* 滑鼠放置圖片 縮放效果 */
-    height: 80%;
-    transition: 2s;/* 縮放速度 */
-}
-
 /* 文字排列 */
-.box>span{
+.box span{
     display: flex;
     justify-items: center;
     align-items: center;
     text-align: center;
     height: 15%;
-    
-}
-
-/* 查看作品集圖片放大%數 */
-.box:hover{
-    flex-basis: 20%;
-}
-
-/* 歸原位的圖片大小*/
-.box:hover>img{
-    width: 100%;
-    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: #000000;
+    font-weight: bold;
 }
 
 footer {

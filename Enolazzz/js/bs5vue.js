@@ -19,7 +19,7 @@ $.ajax({
     method: "get",
     dataType: "json",
     success: results=>{
-        myService.Services = results;
+        myService.Services = results.sort((a, b) => {return a.id - b.id}); //綁定資料
     }
 
 })

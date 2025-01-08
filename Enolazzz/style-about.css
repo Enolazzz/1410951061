@@ -100,188 +100,82 @@ ul li a:hover::after {
     width: 100%; /* 鼠標放置時底線從左到右展開 */
 }
 
+
+
 main{
     background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
     background-attachment: fixed; /* 固定背景 */
     background-size: 100% 100%; /* 背景圖片填滿容器 */
     background-color: rgba(0, 0, 0, .6); /* 設定黑色遮罩 */
     background-blend-mode: multiply; /* 設定背景混合模式 */
+    
+    align-items: center;
+    justify-items: center;
 }
 
-main{
-    background-image: url('image/bg-home.jpg'); /* 設定背景圖片 */
+/* 頭貼 */
+:root {
+    background-image: url('image/bg-home.jpg');
     background-attachment: fixed; /* 固定背景 */
-    background-size: 100% 100%; /* 背景圖片填滿容器 */
+    background-size: 100% 100%; /* 背景圖片填滿 */
     background-color: rgba(0, 0, 0, .6); /* 黑色遮罩 */
     background-blend-mode: multiply; /* 背景混合模式 */
+
+    /* 圖片大小 */
+    --s: 280px;
+    /* 邊框大小 */
+    --b: 5px;
+    /* 邊框顏色 */
+    --c: #6692cf3a;
+    /* 背景顏色 */
+    --bg: #e2eedf;
+    /* 初始縮放比例 */
+    --f: 1;
+  }
+
+  img {
+     box-sizing: content-box; /* 設定盒子模型為 content-box，讓padding不影響寬度 */
+     width: var(--s); /* 設定圖片寬度為變數 --s 的值 */
+     aspect-ratio: 1; /* 設定圖片的寬高比為 1:1，保持正方形 */
+     object-fit: contain; /* 使圖片在容器內保持比例，並且完整顯示 */
+     padding-top: calc(var(--s) / 5); /* 計算上內邊距為 --s 的五分之一 */
+     cursor: pointer; /* 當滑鼠懸停時，顯示為可點擊的手型光標 */
+     transform: scale(var(--f)); /* 根據變數 --f 進行縮放 */
+     transition: 0.5s; /* 設定過渡效果，持續時間為 0.5 秒 */
+     border-radius: 0 0 999px 999px; /* 設定圓角，只對下方兩個角進行圓化 */
+     --o: calc((1 / var(--f) - 1) * var(--s) / 2 - var(--b)); /* 計算變數 --o 的值 */
+     outline: var(--b) solid var(--c); /* 設定外邊框樣式，顏色和寬度由變數 --b 和 --c 決定 */
+     outline-offset: var(--o); /* 設定外邊框的偏移量 */
+     --g: 50% / calc(100% / var(--f)) 100% no-repeat content-box; /* 計算背景樣式的變數 --g */
+     background: radial-gradient( /* 設定背景為放射狀漸變 */
+         circle closest-side,
+         var(--bg) calc(99% - var(--b)), /* 背景顏色由變數 --bg 決定 */
+         var(--c) calc(100% - var(--b)) 99%, /* 漸變顏色由變數 --c 決定 */
+         #0000 /* 透明顏色 */
+       )
+       var(--g); /* 使用變數 --g 設定背景重複方式 */
+     -webkit-mask: linear-gradient(#000 0 0) no-repeat 50% calc(1px - var(--o)) / /* 設定 WebKit 瀏覽器的遮罩 */
+         calc(100% / var(--f) - 2 * var(--b) - 2px) 50%,
+       radial-gradient(circle closest-side, #000 99%, #0000) var(--g); /* 使用圓形漸變作為遮罩 */
+     mask: linear-gradient(#000 0 0) no-repeat 50% calc(1px - var(--o)) / /* 設定其他瀏覽器的遮罩 */
+         calc(100% / var(--f) - 2 * var(--b) - 2px) 50%,
+       radial-gradient(circle closest-side, #000 99%, #0000) var(--g); /* 使用圓形漸變作為遮罩 */
 }
 
-/* 自我介紹 */
-.introduction {
+  img:hover {
+    /* 缩放比例 */
+    --f: 1.35;
+  }
+
+  p{
     align-items: center;
-    justify-items:center;
-    width: 100%;
-    height: 100vh;
-    text-align:left; 
-}
-
-/* 大頭貼 */
-.profile-pic { 
-    width: 200px;
-    height: 200px; 
-    
-    background-image: url('image/profile-pic.jpg');
-    background-size: cover; /* 圖片填滿 */
-    
-    border-radius: 50%; /* 圓形 */
-    transition: transform 0.5s; /*滑鼠放大頭貼上有平滑效果 */
-    margin-left: -400px;
-   
-}
-
-.profile-pic:hover {
-    transform: scale(1.1); /* 滑鼠放大頭貼時放大 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* 陰影 */
-}
-
-.profile-text {
-    margin-left: 200px;
+    justify-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 20px;
     color: #fff;
-    padding-left: 10px; /* 調整左邊距以增加間隔 */
-}
-
-.animationContainer {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-.loader {
-    padding-left: 650px;
-    position: relative;
-}
-
-.loader::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform-origin: left;
-    animation: animate 8s linear infinite;
-}
-@keyframes animate {
-    0%,20%
-    {
-        transform: scaleX(0);
-    }
-    40%
-    {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
-    40.000001%,60%
-    {
-        transform: scaleX(1);
-        transform-origin: right; 
-    }
-    80%,100%
-    {
-        transform: scaleX(0);
-        transform-origin: right; 
-    }
-}
-
-.loader::after
-{
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%) scale(0);
-    width: 10px;
-    height: 10px;
-    background: rgb(241, 255, 170);
-    border-radius: 50%;
-    animation: animateDot 8s linear infinite;
-}
-
-@keyframes animateDot {
-    0%
-    {
-        transform:translateY(-50%) scale(0);
-    }
-    5%
-    {
-        transform:translateY(-50%) scale(1);
-    }
-    15%,20%
-    {
-        transform:translateY(-50%) scale(1);
-        box-shadow: 
-        0 0 0 4px rgb(241, 255, 170),
-        0 0 20px rgb(241, 255, 170),
-        0 0 40px 5px rgb(241, 255, 170),
-        0 0 60px 10px rgb(241, 255, 170);
-    }
-    40%
-    {
-        transform:translateY(-50%) scale(1) translateX(395px);
-    }
-    80%
-    {
-        transform:translateY(-50%) scale(1) translateX(395px);
-        box-shadow: 
-        0 0 0 4px rgb(241, 255, 170),
-        0 0 20px rgb(241, 255, 170),
-        0 0 40px 5px rgb(241, 255, 170),
-        0 0 60px 10px rgb(241, 255, 170);
-    }
-    95%
-    {
-        transform:translateY(-50%) scale(1) translateX(395px);
-        box-shadow: none;
-    }
-    100%
-    {
-        transform:translateY(-50%) scale(0) translateX(395px);
-    }
-
-}
-}
-
-.contractme {
-    font-weight: bold; /* 設定字體為粗體 */
-    justify-items:center;
-    border: transparent;
-  
-    letter-spacing: 0.1ch;
-
     
-}
-button a{
-    color: rgb(0, 0, 0); /* 設定連結顏色*/
-    font-family: 'Courier New', Courier, monospace; /* 設定字型 */
-    background-color: transparent; /* 設定背景為透明 */
-    border: none; /* 移除邊框 */
-    text-decoration: none;
-}
-
-.context input{
-    width: 200px;
-    height: 200px;
-    opacity: 80%;
-    direction: ltr;
-}
-
-.contractme input[type="submit"]{
-    opacity: 80%;
-    align-items:center;
-    justify-items:center;
-    height: 30px;
-    width: 100px;
-    font-size: 14px;
-    direction: ltr;
-}
-
+  }
 footer {
     padding-top: 100px;
     background-image: url('image/bg-home.jpg'); /* 背景圖片 */

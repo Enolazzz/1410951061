@@ -108,58 +108,13 @@ main{
     background-blend-mode: multiply; /* 設定背景混合模式 */
 }
 
-/* 全部照片+心得 大容器 */
-.container {
-    display: flex;
-    flex-wrap: wrap; /* 換行 */
-    position: relative;
-    justify-content: center;
-    align-items:center;
-    width: 100%;
-    height: 100%;
-    padding: 100px; /* 每個小容器都隔開 */
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* 單獨照片+心得 容器 */
-.container .card {
-    position: relative;
-    max-width: 300px; /* 保持最大寬度 */
-    height: 250px;
-    background-color: #fff;
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
-    transition: 0.3s ease-in-out;
-}
-
-/* 把滑鼠放在圖片上的容器展開效果 */
-.container .card:hover {
-    height: 300px;
-}
-
-/* 整體圖片屬性 */
-.container .card .imgBx{
-    position: relative;
-    max-width: 500px;
-    max-height: 200px; 
-}
-
-/* 每張圖片屬性 */
-.container .card .imgBx img{
-    width: 180px;
-    height: 180px;
-    border-radius: 4px;
-    object-fit: cover; /* 保持比例並裁剪並填滿 */
-}
-
 /* 圖片下方文字屬性 */
 p{
+    font-family: 'Courier New', Courier, monospace;
     position: relative;
     margin-top: -10px;
     padding: 5px 5px;
-    color: #000000;
+    color: #ffffff;
 }
 
 footer {
